@@ -1,4 +1,5 @@
 import { TripsIndex } from "./TripsIndex";
+import { Signup } from "./Signup";
 
 export function Content() {
   const trips = [
@@ -21,6 +22,7 @@ export function Content() {
   return (
     <div>
       <h1>Welcome to React!</h1>
+      <Signup />
       <TripsIndex trips={trips} />
     </div>
   );
