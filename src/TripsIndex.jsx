@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Modal } from "./Modal";
+import { PlacesCreate } from "./PlacesCreate";
 import { useState } from "react";
 
 export function TripsIndex(props) {
@@ -38,7 +39,7 @@ export function TripsIndex(props) {
                 </a>
                 <button onClick={() => onShowPlace(trip)}>Add a Place</button>
                 <Modal show={isShowPlaceVisible} onClose={handleClose}>
-                  <h1>Test</h1>
+                  <h1>{placesCreate}</h1>
                 </Modal>
 
                 {trip.places.map((place) => (
