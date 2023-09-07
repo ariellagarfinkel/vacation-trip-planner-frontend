@@ -1,5 +1,24 @@
 /* eslint-disable react/prop-types */
+
+import { Modal } from "./Modal";
+import { useState } from "react";
+
 export function TripsIndex(props) {
+  const [isShowPlaceVisible, setIsShowPlaceVisible] = useState(false);
+
+  const [currentTrip, setCurrentTrip] = useState({});
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsShowPlaceVisible(false);
+  };
+
+  const onShowPlace = (trip) => {
+    console.log("handleShowTrip", trip);
+    setIsShowPlaceVisible(true);
+    setCurrentTrip(trip);
+  };
+
   return (
     <>
       <div>
@@ -17,9 +36,11 @@ export function TripsIndex(props) {
                 <a href="#" className="card-link">
                   Places
                 </a>
-                <a href="#" className="card-link">
-                  Add a Place
-                </a>
+                <button onClick={() => onShowPlace(trip)}>Add a Place</button>
+                <Modal show={isShowPlaceVisible} onClose={handleClose}>
+                  <h1>Test</h1>
+                </Modal>
+
                 {trip.places.map((place) => (
                   <div key={place.id}>
                     <p className="card-text">{place.address}</p>
