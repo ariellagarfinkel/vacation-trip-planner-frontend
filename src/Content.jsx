@@ -1,29 +1,25 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { TripsIndex } from "./TripsIndex";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
-  const trips = [
-    { id: 1, title: "Africa", image_url: "africa.jpg", start_time: "January 8, 2023", end_time: "February 1, 2023" },
-    {
-      id: 2,
-      title: "Australia",
-      image_url: "australia.jpg",
-      start_time: "January 8, 2023",
-      end_time: "February 1, 2023",
-    },
-    {
-      id: 3,
-      title: "Scotland",
-      image_url: "scotland.jpg",
-      start_time: "January 8, 2023",
-      end_time: "February 1, 2023",
-    },
-  ];
+  const [trips, setTrips] = useState([]);
+
+  const handleIndexTrips = () => {
+    console.log("handleIndexTrips");
+    axios.get("http://localhost:3000/trips.json").then((response) => {
+      console.log(response.data);
+      setTrips(response.data);
+    });
+  };
+
+  useEffect(handleIndexTrips, []);
+
   return (
-    <div>
-      <h1>Welcome to React!</h1>
+    <div className="container">
       <Signup />
       <Login />
       <LogoutLink />
