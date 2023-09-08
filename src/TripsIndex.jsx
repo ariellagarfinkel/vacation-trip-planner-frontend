@@ -9,15 +9,15 @@ export function TripsIndex(props) {
 
   const [currentTrip, setCurrentTrip] = useState({});
 
+  const onShowPlace = (trip) => {
+    console.log("ShowPlace", trip);
+    setIsShowPlaceVisible(true);
+    setCurrentTrip(trip);
+  };
+
   const handleClose = () => {
     console.log("handleClose");
     setIsShowPlaceVisible(false);
-  };
-
-  const onShowPlace = (trip) => {
-    console.log("handleShowTrip", trip);
-    setIsShowPlaceVisible(true);
-    setCurrentTrip(trip);
   };
 
   return (
@@ -39,13 +39,13 @@ export function TripsIndex(props) {
                 </a>
                 <button onClick={() => onShowPlace(trip)}>Add a Place</button>
                 <Modal show={isShowPlaceVisible} onClose={handleClose}>
-                  <h1>{placesCreate}</h1>
+                  <PlacesCreate handlePlacesCreate={props.handlePlacesCreate} currentTrip={currentTrip} />
                 </Modal>
 
                 {trip.places.map((place) => (
                   <div key={place.id}>
                     <p className="card-text">{place.address}</p>
-                    <img src={place.image_url} />
+                    <img src={place.image_url} width="100" />
                   </div>
                 ))}
               </div>

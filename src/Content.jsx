@@ -4,13 +4,12 @@ import { TripsIndex } from "./TripsIndex";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
-import { PlacesCreate } from "../PlacesCreate";
+import { PlacesCreate } from "./PlacesCreate";
 
 export function Content() {
   const [trips, setTrips] = useState([]);
-  const [placesCreate, setPlacesCreate] = useState([]);
 
-  const handleIndexTrips = () => {
+  const handleTripsIndex = () => {
     console.log("handleIndexTrips");
     axios.get("http://localhost:3000/trips.json").then((response) => {
       console.log(response.data);
@@ -20,15 +19,17 @@ export function Content() {
 
   const handlePlacesCreate = (params, successCallback) => {
     console.log("handlePlacesCreate", params);
-    axios.post("http://localhost:3000/trips.json", params).then((response) => {
-      setPlacesCreate([...placesCreate, response.data]);
+    axios.post("http://localhost:3000/places.json", params).then((response) => {
+      // setPlacesCreate([...places, response.data]);
+      console.log(response.data);
       successCallback();
     });
   };
 
-  // have use effect now need  a function to create
+  // trips.places = )
+  // so dont needa refresh
 
-  useEffect(handleIndexTrips, []);
+  useEffect(handleTripsIndex, []);
   useEffect(handlePlacesCreate, []);
 
   return (
@@ -36,7 +37,7 @@ export function Content() {
       <Signup />
       <Login />
       <LogoutLink />
-      <TripsIndex trips={trips} />
+      <TripsIndex trips={trips} handlePlacesCreate={handlePlacesCreate} />
     </div>
   );
 }
