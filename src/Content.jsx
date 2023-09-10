@@ -5,9 +5,11 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { PlacesCreate } from "./PlacesCreate";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [trips, setTrips] = useState([]);
+  const [places, setPlacesCreate] = useState([]);
 
   const handleTripsIndex = () => {
     console.log("handleIndexTrips");
@@ -20,7 +22,7 @@ export function Content() {
   const handlePlacesCreate = (params, successCallback) => {
     console.log("handlePlacesCreate", params);
     axios.post("http://localhost:3000/places.json", params).then((response) => {
-      // setPlacesCreate([...places, response.data]);
+      setPlacesCreate(places.filder((trips) => trips.places !== places.id));
       console.log(response.data);
       successCallback();
     });
@@ -28,16 +30,21 @@ export function Content() {
 
   // trips.places = )
   // so dont needa refresh
+  // {errors.map((error) => (
+  //   <li key={error}>{error}</li>
+  // ))}
 
   useEffect(handleTripsIndex, []);
   useEffect(handlePlacesCreate, []);
 
   return (
     <div className="container">
-      <Signup />
-      <Login />
-      <LogoutLink />
-      <TripsIndex trips={trips} handlePlacesCreate={handlePlacesCreate} />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<LogoutLink />} />
+        <Route path="/mytrips" element={<TripsIndex trips={trips} handlePlacesCreate={handlePlacesCreate} />} />
+      </Routes>
     </div>
   );
 }
