@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { TripsIndex } from "./TripsIndex";
+import { Root } from "./Root";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
@@ -22,7 +23,6 @@ export function Content() {
   const handlePlacesCreate = (params, successCallback, currentTrip) => {
     console.log("handlePlacesCreate", params);
     axios.post("http://localhost:3000/places.json", params).then((response) => {
-      // setPlacesCreate(...places, response.data);
       console.log(response.data);
       setTrips(
         trips.map((trip) => {
@@ -37,11 +37,12 @@ export function Content() {
   };
 
   useEffect(handleTripsIndex, []);
-  // useEffect(handlePlacesCreate, []);
+  useEffect(handlePlacesCreate, []);
 
   return (
     <div className="container">
       <Routes>
+        <Route path="/" element={<Root />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<LogoutLink />} />

@@ -43,6 +43,7 @@ export function Signup() {
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
         <button type="submit">Signup</button>
+        {/* link to places create modal */}
       </form>
     </div>
   );

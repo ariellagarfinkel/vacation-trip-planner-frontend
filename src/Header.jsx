@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
-import { LogoutLink } from "./Logoutlink";
-import { Signup } from "./Signup";
-
 export function Header() {
   return (
-    <header>
-      <nav>
-        <a href="#">Home</a> | <a href="#">Link</a>
-      </nav>
-    </header>
+    <div className="container-fluid">
+      <a className="navbar-brand" href="#">
+        <img
+          src="https://thumbs.dreamstime.com/b/travel-trip-logo-agency-adventure-creative-sign-171132504.jpg"
+          alt="Logo"
+          width="50"
+          height="50"
+          className="d-inline-block align-text-top"
+        />{" "}
+        MyTrips
+      </a>
+    </div>
   );
 }

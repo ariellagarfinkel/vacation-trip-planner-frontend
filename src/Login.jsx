@@ -44,6 +44,7 @@ export function Login() {
           Password: <input name="password" type="password" />
         </div>
         <button type="submit">Login</button>
+        {/* link to his trips index page */}
       </form>
     </div>
   );

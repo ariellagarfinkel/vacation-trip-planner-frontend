@@ -1,7 +1,7 @@
 // import * as React from "react";
 import { Link } from "react-router-dom";
 
-export function root() {
+export function Root() {
   return (
     <>
       <Link to="/signup" className="btn btn-primary">
