@@ -22,7 +22,7 @@ export function Content() {
   const handlePlacesCreate = (params, successCallback) => {
     console.log("handlePlacesCreate", params);
     axios.post("http://localhost:3000/places.json", params).then((response) => {
-      setPlacesCreate(places.filder((trips) => trips.places !== places.id));
+      setPlacesCreate(...places, response.data);
       console.log(response.data);
       successCallback();
     });
@@ -30,6 +30,7 @@ export function Content() {
 
   // trips.places = )
   // so dont needa refresh
+
   // {errors.map((error) => (
   //   <li key={error}>{error}</li>
   // ))}
