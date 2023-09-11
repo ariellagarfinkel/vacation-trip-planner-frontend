@@ -19,24 +19,25 @@ export function Content() {
     });
   };
 
-  const handlePlacesCreate = (params, successCallback) => {
+  const handlePlacesCreate = (params, successCallback, currentTrip) => {
     console.log("handlePlacesCreate", params);
     axios.post("http://localhost:3000/places.json", params).then((response) => {
-      setPlacesCreate(...places, response.data);
+      // setPlacesCreate(...places, response.data);
       console.log(response.data);
+      setTrips(
+        trips.map((trip) => {
+          if (trip.id === currentTrip.id) {
+            trip.places = [...trip.places, response.data];
+          }
+          return trip;
+        })
+      );
       successCallback();
     });
   };
 
-  // trips.places = )
-  // so dont needa refresh
-
-  // {errors.map((error) => (
-  //   <li key={error}>{error}</li>
-  // ))}
-
   useEffect(handleTripsIndex, []);
-  useEffect(handlePlacesCreate, []);
+  // useEffect(handlePlacesCreate, []);
 
   return (
     <div className="container">
