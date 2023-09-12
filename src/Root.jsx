@@ -1,15 +1,26 @@
-// import * as React from "react";
+// import "./App.css";
+import "./index.css";
+// import { Signup } from "./Signup";
+// import { Login } from "./Login";
 import { Link } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 export function Root() {
   return (
     <>
-      <Link to="/signup" className="btn btn-primary">
-        Sign up
-      </Link>
-      <Link to="/login" className="btn btn-primary">
-        Login
-      </Link>
+      <div className="buttons">
+        <Link to="/signup">
+          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+            Sign Up
+          </button>
+        </Link>
+        <Link to="/login">
+          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+            Log In
+          </button>
+        </Link>
+      </div>
     </>
   );
 }
+// div className used to be centered
