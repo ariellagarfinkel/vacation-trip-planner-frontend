@@ -4,7 +4,7 @@ export function TripsCreate(props) {
     event.preventDefault();
     // user_id:integer-is this needed bc only can create a trip once logged in-append
     const params = new FormData(event.target);
-    props.onTripsCreate(params, () => event.target.reset());
+    props.handleTripsCreate(params, () => event.target.reset());
   };
 
   return (

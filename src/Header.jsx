@@ -1,19 +1,4 @@
-// export function Header() {
-//   return (
-//     <div classNameName="container-fluid">
-//       <a className="navbar-brand" href="#">
-//         <img
-//           src="https://thumbs.dreamstime.com/b/travel-trip-logo-agency-adventure-creative-sign-171132504.jpg"
-//           alt="Logo"
-//           width="50"
-//           height="50"
-//           className="d-inline-block align-text-top"
-//         />{" "}
-//         MyTrips
-//       </a>
-//     </div>
-//   );
-// }
+import { LogoutLink } from "./logoutlink";
 export function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -49,8 +34,8 @@ export function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Logout
+              <a className="nav-link" href="">
+                <LogoutLink />
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -76,7 +61,7 @@ export function Header() {
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Budget Your Trip
+                    Budget Your rip
                   </a>
                 </li>
               </ul>
