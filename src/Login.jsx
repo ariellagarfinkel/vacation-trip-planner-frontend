@@ -43,8 +43,9 @@ export function Login() {
         <div>
           Password: <input name="password" type="password" />
         </div>
-        <button type="submit">Login</button>
-        {/* link to his trips index page */}
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

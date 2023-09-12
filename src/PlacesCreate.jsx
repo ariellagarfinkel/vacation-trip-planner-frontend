@@ -24,10 +24,10 @@ export function PlacesCreate(props) {
           Image_url <input name="image_url" width="3" type="text" />
         </div>
         <div>
-          Start_time <input name="start_time" type="text" />
+          Start_time <input name="start_time" type="datetime" />
         </div>
         <div>
-          End_time <input name="end_time" type="text" />
+          End_time <input name="end_time" type="datetime" />
         </div>
 
         <button type="submit">Create Place</button>

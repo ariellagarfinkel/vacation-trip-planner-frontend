@@ -13,7 +13,7 @@ export function Signup() {
       .then((response) => {
         console.log(response.data);
         event.target.reset();
-        window.location.href = "/mytrips"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/mytrips";
       })
       .catch((error) => {
         console.log(error.response.data.errors);
@@ -42,7 +42,9 @@ export function Signup() {
         <div>
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
-        <button type="submit">Signup</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Signup
+        </button>
         {/* link to places create modal */}
       </form>
     </div>
