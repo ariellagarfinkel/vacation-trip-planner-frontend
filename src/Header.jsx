@@ -61,7 +61,7 @@ export function Header() {
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Budget Your rip
+                    Budget Your trip
                   </a>
                 </li>
               </ul>
