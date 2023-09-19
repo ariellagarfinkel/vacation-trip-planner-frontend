@@ -66,11 +66,15 @@
 import { Modal } from "./Modal";
 import { PlacesCreate } from "./PlacesCreate";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function TripsIndex(props) {
   const [isShowPlaceVisible, setIsShowPlaceVisible] = useState(false);
 
   const [currentTrip, setCurrentTrip] = useState({});
+
+  // const YourComponent = ({ trip }) => {
+  const [isListOpen, setIsListOpen] = useState(false);
 
   const onShowPlace = (trip) => {
     console.log("ShowPlace", trip);
@@ -82,11 +86,6 @@ export function TripsIndex(props) {
     console.log("handleClose");
     setIsShowPlaceVisible(false);
   };
-
-  // const handleClick = () => {
-  //   console.log("handleTripsCreate");
-  //   props.handleTripsCreate();
-  // };
 
   return (
     <>
@@ -102,54 +101,29 @@ export function TripsIndex(props) {
                 <p className="card-text">{trip.end_time}</p>
               </div>
               <div className="card-body">
-                <a href="#" className="card-link">
-                  Places
-                </a>
+                <button className={`btn btn-primary`} type="button" onClick={() => setIsListOpen(!isListOpen)}>
+                  {" "}
+                  {isListOpen ? "Hide Places" : "Show Places"}{" "}
+                </button>
                 <button onClick={() => onShowPlace(trip)}>Add a Place</button>
                 <Modal show={isShowPlaceVisible} onClose={handleClose}>
                   <PlacesCreate handlePlacesCreate={props.handlePlacesCreate} currentTrip={currentTrip} />
                 </Modal>
-
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Places
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        {place.name}
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Book Your Lodging
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Budget Your trip
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
-                {trip.places.map((place) => (
-                  <div key={place.id}>
-                    <p className="card-text">{place.address}</p>
-                    <img src={place.image_url} width="100" />
+                {isListOpen && (
+                  <div>
+                    {trip.places.map((place) => (
+                      <div key={place.id}>
+                        <p className="card-text">{place.address}</p>
+                        <img src={place.image_url} width="100" />
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
         ))}
-        {/* <button onClick={handleClick()}>Add a Trip</button> */}
+        <Link to="/createtrips">Create a new Trip</Link>
       </div>
     </>
   );

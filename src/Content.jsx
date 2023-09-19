@@ -37,15 +37,6 @@ export function Content() {
     });
   };
 
-  // const handleTripsCreate = (params, successCallback) => {
-  //   console.log("handTripsCreate", params);
-  //   axios.post("http://localhost:3000/trips.json", params).then((response) => {
-  //     console.log(response.data);
-  //     setTrips([...trips, response.data]);
-  //     successCallback();
-  //   });
-  // };
-
   useEffect(handleTripsIndex, []);
 
   return (
@@ -56,7 +47,7 @@ export function Content() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<LogoutLink />} />
         <Route path="/mytrips" element={<TripsIndex trips={trips} handlePlacesCreate={handlePlacesCreate} />} />
-        {/* <Route path="/createtrips" element={<TripsCreate handleTripsCreate={handleTripsCreate} />} /> */}
+        <Route path="/createtrips" element={<TripsCreate />} />
       </Routes>
     </div>
   );
