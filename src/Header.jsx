@@ -1,4 +1,4 @@
-import { LogoutLink } from "./logoutlink";
+import { LogoutLink } from "./LogoutLink";
 export function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,7 +34,7 @@ export function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="">
+              <a className="logout-link" href="">
                 <LogoutLink />
               </a>
             </li>

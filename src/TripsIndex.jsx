@@ -90,7 +90,7 @@ export function TripsIndex(props) {
   return (
     <>
       <div>
-        <h1>My Trips</h1>
+        <h1>My Trips!</h1>
         {props.trips.map((trip) => (
           <div key={trip.id}>
             <div className="card">
