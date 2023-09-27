@@ -1,4 +1,6 @@
 import { LogoutLink } from "./LogoutLink";
+import { TripsCreate } from "./TripsCreate";
+import { Link } from "react-router-dom";
 export function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -29,8 +31,12 @@ export function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Add a trip
+              <a className="tripscreate-link">
+                <Link to="/createTrips">
+                  <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+                    Create a Trip
+                  </button>
+                </Link>
               </a>
             </li>
             <li className="nav-item">
