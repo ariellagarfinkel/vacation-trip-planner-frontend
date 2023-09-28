@@ -14,6 +14,7 @@ export function Root() {
             Sign Up
           </button>
         </Link>
+        &nbsp;
         <Link to="/login">
           <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
             Log In

@@ -2,6 +2,10 @@ import { LogoutLink } from "./LogoutLink";
 import { TripsCreate } from "./TripsCreate";
 import { Link } from "react-router-dom";
 export function Header() {
+
+  // let authenticationLinks;
+  // if (localStorage.jwt === jwt)
+  // authenticationLinks = 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -76,5 +80,6 @@ export function Header() {
         </div>
       </div>
     </nav>
+
   );
 }
