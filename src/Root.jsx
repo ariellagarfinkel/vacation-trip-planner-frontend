@@ -1,24 +1,19 @@
 // import "./App.css";
 import "./index.css";
-// import { Signup } from "./Signup";
+// import { Signup } from "./Signup"; -how come signup and login work if these are commented out
 // import { Login } from "./Login";
 import { Link } from "react-router-dom";
-import { Routes, Route, Navigate } from "react-router-dom";
+// import { Routes, Route, Navigate } from "react-router-dom";- dont think Im using this...
 
 export function Root() {
   return (
     <>
       <div className="buttons">
-        <Link to="/signup">
-          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+        <Link className="mx-2 btn btn-big btn-outline-dark rounded-pill" to="/signup">
             Sign Up
-          </button>
         </Link>
-        &nbsp;
-        <Link to="/login">
-          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
-            Log In
-          </button>
+        <Link className="mx-2 btn btn-big btn-outline-dark rounded-pill"to="/login">
+          Login
         </Link>
       </div>
     </>

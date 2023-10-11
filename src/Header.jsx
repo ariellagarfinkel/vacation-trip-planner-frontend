@@ -3,19 +3,24 @@ import { TripsCreate } from "./TripsCreate";
 import { Link } from "react-router-dom";
 export function Header() {
 
-  // let authenticationLinks;
-  // if (localStorage.jwt === jwt)
-  // authenticationLinks = 
+  let LogoutLinks;
+  if (localStorage.jwt !== undefined){
+    LogoutLinks = 
+      <li className="nav-item">
+        <LogoutLink />
+      </li>
+  }
+  
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#" />
+        <a className="navbar-brand" href="#">
         <img
           src="https://thumbs.dreamstime.com/b/travel-trip-logo-agency-adventure-creative-sign-171132504.jpg"
           width="50"
           height="50"
         />
-
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,24 +35,16 @@ export function Header() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link" aria-current="page" href="#">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="tripscreate-link">
-                <Link to="/createTrips">
-                  <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+                <Link className="nav-link" to="/createTrips">
                     Create a Trip
-                  </button>
                 </Link>
-              </a>
             </li>
-            <li className="nav-item">
-              <a className="logout-link" href="">
-                <LogoutLink />
-              </a>
-            </li>
+            {LogoutLinks}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
