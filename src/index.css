@@ -1,11 +1,6 @@
-/* #root {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: url('assets/background.png');
-
-} */
 #root {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: url('assets/background.png');
+  background-image: url('assets/summer.png');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
