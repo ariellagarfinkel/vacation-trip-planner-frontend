@@ -16,6 +16,7 @@ export function Header() {
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
         <img
+          //  background-image: url('assets/logo.png');
           src="https://thumbs.dreamstime.com/b/travel-trip-logo-agency-adventure-creative-sign-171132504.jpg"
           width="50"
           height="50"

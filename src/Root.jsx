@@ -3,8 +3,7 @@ import "./index.css";
 // import { Signup } from "./Signup"; -how come signup and login work if these are commented out
 // import { Login } from "./Login";
 import { Link } from "react-router-dom";
-// import { Routes, Route, Navigate } from "react-router-dom";- dont think Im using this...
-
+// import { Routes, Route, Navigate } from "react-router-dom";
 export function Root() {
   return (
     <>
