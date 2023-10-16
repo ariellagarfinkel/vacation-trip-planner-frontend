@@ -40,6 +40,7 @@ export function TripsIndex(props) {
                   {" "}
                   {isListOpen ? "Hide Places" : "Show Places"}{" "}
                 </button>
+                &nbsp; 
                 <button className={`btn btn-primary`} type="button" onClick={() => onShowPlace(trip)}>Add a Place</button>
                 <Modal show={isShowPlaceVisible} onClose={handleClose}>
                   <PlacesCreate handlePlacesCreate={props.handlePlacesCreate} currentTrip={currentTrip} />
