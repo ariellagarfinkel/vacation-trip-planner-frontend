@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./index.css";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
@@ -30,7 +31,7 @@ export function Login() {
   };
 
   return (
-    <div id="login">
+    <div className="centered" id="login">
       <h1>Login</h1>
       <ul>
         {errors.map((error) => (

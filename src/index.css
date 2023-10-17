@@ -33,7 +33,12 @@ body, html {
 } x work mayb bc it looks like a prop-on trips index*/ 
 
 
-  
+.centered{
+  top: 50%;
+  left: 55%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 .container {
   height: 100%;
   min-height: 100vh;
