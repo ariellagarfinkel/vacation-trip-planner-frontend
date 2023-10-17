@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export function Root() {
   return (
     <>
-      <div className="buttons">
+      <div className="buttons center">
         <Link className="mx-2 btn btn-big btn-outline-dark rounded-pill" to="/signup">
             Sign Up
         </Link>

@@ -21,20 +21,16 @@ body, html {
   margin-bottom: 20px !important;
 }
 
-
-.buttons {
-  /* width: 200px;
-  margin: 0 auto;
-  display: flex; */
-  margin: 0;
-  position: absolute;
+.buttons{
   top: 90%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
-.btn btn-primary {
+
+/* .btn btn-primary {
   margin-left:20px;
-}
+} x work mayb bc it looks like a prop-on trips index*/ 
 
 
   
